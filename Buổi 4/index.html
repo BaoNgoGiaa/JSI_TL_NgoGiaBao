@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCkqH3cl4uT85rUqEFFcO0pQdLgFdzTpN0",
+        authDomain: "fir-da100.firebaseapp.com",
+        projectId: "fir-da100",
+        storageBucket: "fir-da100.appspot.com",
+        messagingSenderId: "167583342503",
+        appId: "1:167583342503:web:ff617b4459d451c82ee082",
+        measurementId: "G-F4ZRYE0YZN",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth.email, auth.password) 
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+
+          alert("Dang ky thanh cong");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert("Dang ky that bai");
+          // ..
+        });
+      createUserWithEmailAndPassword("dlt@gmail.com", "123123");
+    </script>
+  </body>
+</html>
